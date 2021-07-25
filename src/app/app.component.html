@@ -1,0 +1,86 @@
+<div class="mainouter">
+    <div class="infoouter">
+        <div class="infotitle">
+            <label>ADD USER INFORMATION</label>
+        </div>
+        <div>
+            <div class="inputinfo">
+                <label>Name</label><br>
+                <input type="text" [(ngModel)]="userDetails.name" required>
+            </div>
+            <div class="inputinfo">
+                <label>Age</label><br>
+                <select class="input-text" (change)='onageSelected($event.target.value)'>
+                    <option *ngFor="let age of ages" [value]="age">{{age}}</option>
+                </select>
+            </div>
+            <div class="inputinfo">
+                <label>Gendar</label><br>
+                <div class="genderinfo">
+                    <div>
+                        <input type="radio" value="Male" [(ngModel)]="userDetails.gendar" (change)="radioChangHandler($event)">Male
+                    </div>
+                    <div>
+                        <input type="radio" value="Female" [(ngModel)]="userDetails.gendar"
+                            (change)="radioChangHandler($event)">Female
+                    </div>
+                </div>
+            </div>
+            <div class="inputinfo">
+                <label>Hobbies</label><br>
+                <div class="managehobies">
+                    <input type="text" [(ngModel)]="hobbie.add">
+                    <button (click)="addhobbies()">add</button>
+                </div>
+                <div class="managehobies">
+                    <input type="text" [(ngModel)]="hobbie.remove">
+                    <button (click)="removehobbies()">remove</button>
+                </div>
+            </div>
+            <div class="inputinfo">
+                <input type="checkbox" [(ngModel)]="userDetails.varified">
+                <label>All this information are varified</label><br>
+            </div>
+            <div class="inputinfo infobuttons">
+                <button (click)="addUser()">Add</button>
+                <button (click)="resetForm()">Reset</button>
+            </div>
+        </div>
+    </div>
+    <div class="tableinfoouter">
+            <div class="infotitle">
+                <label>USRLIST</label>
+            </div>
+            <div class="searchList">
+                <input type="text" [(ngModel)]="searchText" placeholder="Search by name" (keyup.enter)="searchUser()">
+            </div>
+            <div class="userlist">
+                <table class="tborder">
+                    <tr  class="tborder">
+                        <th>NAME</th>
+                        <th>AGE</th>
+                        <th>Gendar</th>
+                        <th>Hobbies</th>
+                        <th>ACTION</th>
+                    </tr>
+                    <tr *ngFor="let user of userlist;let i = index">
+                        <td *ngIf="!searchlistvalue" >{{user.name}}</td>
+                        <td *ngIf="!searchlistvalue" >{{user.age}}</td>
+                        <td *ngIf="!searchlistvalue" >{{user.gendar}}</td>
+                        <td *ngIf="!searchlistvalue" >{{user.hobbies}}</td>
+                        <td *ngIf="!searchlistvalue" ><button mat-button color="primary" (click)="openUserRemoveModale(i)" class="delete">Delete</button></td>
+                    </tr>
+                    <tr *ngFor="let user of searchlist;let i = index">
+                        <td *ngIf="searchlistvalue">{{user.name}}</td>
+                        <td *ngIf="searchlistvalue">{{user.age}}</td>
+                        <td *ngIf="searchlistvalue">{{user.gendar}}</td>
+                        <td *ngIf="searchlistvalue">{{user.hobbies}}</td>
+                        <td *ngIf="searchlistvalue"><button mat-button color="primary" (click)="openUserRemoveModale(i)" class="delete">Delete</button></td>
+                    </tr>
+                    <tr *ngIf="norecords">
+                        No Any Records
+                    </tr>
+                </table>
+            </div>
+        </div>
+</div>

@@ -1,0 +1,67 @@
+.mainouter{
+    border: 1px solid blue;
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+}
+.infoouter{
+    border: 1px solid black;
+    margin-right: 117px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 25%;
+}
+.infotitle{
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+.inputinfo{
+    margin: 10px;
+}
+.genderinfo{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 100px;
+}
+.managehobies{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+.infobuttons{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 100px;
+    margin-left: 50px;
+}
+.tableinfoouter{
+    border: 1px solid black;
+    margin-right: 117px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 80%;
+}
+.tborder{
+    border: 1px solid;
+    width: 100%;
+}
+th{
+    border: 1px solid; 
+    padding: 10px;
+}
+.userlist{
+    margin: 50px;
+}
+td{
+    border: 1px solid; 
+    padding: 10px;
+}
+.delete{
+    color: blue;
+}
+.searchList{
+    margin-top: 30px;
+    margin-left: 55%;
+}
